@@ -165,23 +165,21 @@
 
   # Define user accounts. Don't forget to set a password with ‘passwd’.
   users.users.saluki = {
+    
     isNormalUser = true;
     description = "Sara Grace";
+
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
+
+    shell = pkgs.zsh;
+
     /*
     packages = with pkgs; [
       #brave
       #bitwarden-desktop
-      filezilla
-      finamp
-      popsicle
-      syncthing
-      syncthingtray
-      telegram-desktop
-      thunderbird
       trezor-suite
     ];
     */
