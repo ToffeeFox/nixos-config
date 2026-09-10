@@ -16,7 +16,6 @@
 
       # Load security config
       ./security/core.nix
-      ./security/keepassxc.nix
       ./security/u2f.nix
 
       # Load special profiles/bundles
