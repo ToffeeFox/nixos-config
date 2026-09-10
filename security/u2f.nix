@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     fido2luks
     pam_u2f
-  ]
+  ];
 
   # Enable Trezor support. Handles udev rules and the Trezor Bridge subsystem
   services.trezord = {
