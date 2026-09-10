@@ -11,10 +11,10 @@
       ./hardware-configuration.nix
       ./boot.nix
 
-      ./precision_5570.nix
+      ./hosts/precision_5570/tweaks.nix
       # Load special profiles/bundles
       ./profiles/development.nix
-      ./web_browsers.nix
+      ./browsers/firefox/librewolf/librewolf.nix
     ];
 
   networking.hostName = "foxpad-ultranix"; # Define your hostname.
