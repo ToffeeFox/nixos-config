@@ -16,7 +16,11 @@
 
     upower = {
       enable = true;
-    }; 
+    };
+
+    gnome.gnome-keyring = {
+      enable = lib.mkForce false;
+    };
   };
 
   programs = {
