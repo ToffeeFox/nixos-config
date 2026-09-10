@@ -11,7 +11,13 @@
       ./hardware-configuration.nix
       ./boot.nix
 
+      # Host-Specific Tweaks
       ./hosts/precision_5570/tweaks.nix
+
+      # Load security config
+      ./security/core.nix
+      ./security/u2f.nix
+
       # Load special profiles/bundles
       ./profiles/development.nix
       ./browsers/firefox/librewolf/librewolf.nix
@@ -128,11 +134,6 @@
     enable = true;
   };
 
-  # Enable Trezor support. Handles udev rules and the Trezor Bridge subsystem
-  services.trezord = {
-    enable = true;
-  };
-
   # Enable Localsend
   # For whatever reason this has to be done via the programs key
   programs.localsend = {
@@ -141,26 +142,6 @@
 
   programs.steam = {
     enable = false;
-  };
-
-  security.pam = {
-    u2f = {
-      enable = true;
-      control = "sufficient";
-      settings = {
-        authfile = "/etc/security/pam_u2f.conf";
-        cue = true; # Visual cue when prompting
-        #interactive = true; # Prompt user to connect U2F device before attempting scan
-      };
-    };
-    services = {
-      login = {
-        u2fAuth = true;
-      };
-      sudo = {
-        u2fAuth = true;
-      };
-    };
   };
 
   # Define user accounts. Don't forget to set a password with ‘passwd’.
@@ -190,10 +171,6 @@
 
     # These packages should be installed no matter what
     commonPackages = with pkgs; [
-      # SECURITY
-      fido2luks
-      pam_u2f
-
       # CLI Tools
       btop
       inetutils
