@@ -156,14 +156,6 @@
     ];
 
     shell = pkgs.zsh;
-
-    /*
-    packages = with pkgs; [
-      #brave
-      #bitwarden-desktop
-      trezor-suite
-    ];
-    */
   };
 
   environment.systemPackages = let
