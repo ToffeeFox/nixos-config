@@ -46,7 +46,9 @@ in
       systemd.enable = true;
 
       luks = {
-        #fido2support = false;
+        # Counterintuitively, we need to disable FIDO2 support to use
+        # FIDO2 with systemd stage 1.
+        fido2support = false;
 
         devices = {
           "luks-${disks.rootUUID}" = {
