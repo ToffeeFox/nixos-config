@@ -1,13 +1,15 @@
 { inputs, lib, pkgs, config, ... }:
 
 {
-  /*
   environment.systemPackages = [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.ddcutil
   ];
-  */
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    i2c.enable = true;
+  };
 
   services = {
     power-profiles-daemon = {
