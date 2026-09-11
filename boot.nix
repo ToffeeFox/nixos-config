@@ -7,6 +7,11 @@ let
   };
 in
 {
+  environment.systemPackages = with pkgs; [
+    # Secure Boot Manager Package Thing
+    sbctl
+  ];
+  
   boot = {
     # Bootloader!
     loader = {
@@ -14,7 +19,16 @@ in
       limine = {
         enable = true;
 
-        #resolution = "1920x1200x32"
+        secureBoot.enable = true;
+
+        resolution = "1920x1200x32";
+
+        style = {
+          interface = {
+            branding = "Lukida's Customized Limine Bootloader";
+            resolution = "1920x1200";
+          };
+        };
       };
       efi.canTouchEfiVariables = true;
     };
