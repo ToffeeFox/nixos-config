@@ -24,7 +24,5 @@
     jupyter
 
     nil # Nix language server
-
-    vscodium-fhs #FHS-compliant vscodium package, allowing for use of extensions without extra nix overrides
   ];
 }
