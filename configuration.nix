@@ -129,6 +129,12 @@
     ];
   };
 
+  fonts.packages = with pkgs; [
+    fira
+    fira-code
+    fira-code-symbols
+  ];
+
   # Enable Cloudflare WARP
   services.cloudflare-warp = {
     enable = true;
