@@ -10,7 +10,12 @@ in
   boot = {
     # Bootloader!
     loader = {
-      systemd-boot.enable = true;
+      #systemd-boot.enable = true;
+      limine = {
+        enable = true;
+
+        #resolution = "1920x1200x32"
+      };
       efi.canTouchEfiVariables = true;
     };
 
