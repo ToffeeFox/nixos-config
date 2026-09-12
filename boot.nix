@@ -58,6 +58,9 @@ in
             device = "/dev/disk/by-uuid/${disks.rootUUID}";
           };
           "luks-${disks.swapUUID}" = {
+            crypttabExtraOpts = [
+              "fido2-device=auto"
+            ];
             device = "/dev/disk/by-uuid/${disks.swapUUID}";
           };
         };
