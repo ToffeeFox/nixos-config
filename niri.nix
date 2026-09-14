@@ -20,17 +20,7 @@
       enable = true;
     };
 
-    gnome.gnome-keyring = {
-      enable = lib.mkForce false;
-    };
-  };
-
-  programs = {
-    noctalia = {
-      enable = true;
-    };
-
-    noctalia-greeter = {
+    displayManager.noctalia-greeter = {
       enable = true;
 
       greeter-args = "";
@@ -43,7 +33,16 @@
         };
       };
     };
-  
+
+    gnome.gnome-keyring = {
+      enable = lib.mkForce false;
+    };
+  };
+
+  programs = {
+    noctalia = {
+      enable = true;
+    };
 
     niri = {
       enable = true;
