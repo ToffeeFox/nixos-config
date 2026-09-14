@@ -8,7 +8,7 @@
     };
 
     nixos-hardware = {
-      url= "github:NixOS/nixos-hardware";
+      url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -24,7 +24,7 @@
     
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos-hardware, ... }: {
+  outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations.foxpad-ultranix = nixpkgs.lib.nixosSystem {
 
       modules = [
@@ -33,7 +33,7 @@
         ./configuration.nix
 
         # NixOS Hardware Profile
-        nixos-hardware.nixosModules.dell-precision-5570
+        inputs.nixos-hardware.nixosModules.dell-precision-5570
 
         # Niri
         ## Core Settings
@@ -44,6 +44,5 @@
         inputs.noctalia-greeter.nixosModules.default
       ];
     };
-
   };
 }
