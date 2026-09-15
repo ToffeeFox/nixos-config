@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ../../security/fprint.nix
+    ../../modules/security/fprint.nix
   ];
 }
