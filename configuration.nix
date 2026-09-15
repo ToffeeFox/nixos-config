@@ -12,7 +12,7 @@
       ./modules/boot.nix
 
       # Host-Specific Tweaks
-      ./hosts/precision_5570/tweaks.nix
+      ./modules/hosts/precision_5570/tweaks.nix
 
       # Load security config
       ./modules/security/core.nix
