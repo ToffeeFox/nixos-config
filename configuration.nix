@@ -8,19 +8,22 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./boot.nix
+      ./modules/hardware-configuration.nix
+      ./modules/boot.nix
 
       # Host-Specific Tweaks
       ./hosts/precision_5570/tweaks.nix
 
       # Load security config
-      ./security/core.nix
-      ./security/u2f.nix
+      ./modules/security/core.nix
+      ./modules/security/u2f.nix
 
       # Load special profiles/bundles
-      ./profiles/development.nix
-      ./browsers/firefox/librewolf/librewolf.nix
+      ./modules/profiles/development.nix
+      ./modules/browsers/firefox/librewolf/librewolf.nix
+
+      # Load graphical desktop session
+      ./modules/gui_shell/niri.nix
     ];
 
   networking.hostName = "foxpad-ultranix"; # Define your hostname.

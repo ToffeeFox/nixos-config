@@ -7,6 +7,10 @@
       url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     };
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,10 +38,6 @@
 
         # NixOS Hardware Profile
         inputs.nixos-hardware.nixosModules.dell-precision-5570
-
-        # Niri
-        ## Core Settings
-        ./niri.nix
 
         ## Noctalia and its Greeter
         inputs.noctalia.nixosModules.default
