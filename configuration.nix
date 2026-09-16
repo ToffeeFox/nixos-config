@@ -23,7 +23,7 @@
       ./modules/browsers/firefox/librewolf/librewolf.nix
 
       # Load graphical desktop session
-      ./modules/gui_shell/niri.nix
+      ./modules/deskies/niri.nix
     ];
 
   networking.hostName = "foxpad-ultranix"; # Define your hostname.
