@@ -24,6 +24,7 @@
     jupyter
 
     nil # Nix language server
+    nixd # Another Nix language server
     nixfmt # Nix language formatting service
   ];
 }
