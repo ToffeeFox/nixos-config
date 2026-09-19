@@ -16,6 +16,13 @@
           registry.nixpkgs.flake = inputs.nixpkgs;
           gc.automatic = true;
           settings = {
+            experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
+            trusted-users = [
+              "@wheel"
+            ];
             keep-outputs = true;
             keep-derivations = true;
             use-xdg-base-directories = true;
