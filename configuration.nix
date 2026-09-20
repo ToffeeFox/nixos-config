@@ -82,6 +82,18 @@
     variant = "";
   };
 
+  # Logitech wireless peripherals
+  hardware.logitech.wireless.enable = true;
+  programs.solaar = {
+    enable = true;
+
+    userService = {
+      enable = true;
+
+      batteryIcons = "symbolic";
+    };
+  };
+
   # Enable ZSH
   programs.zsh = {
     enable = true;
@@ -155,7 +167,7 @@
 
   # Define user accounts. Don't forget to set a password with ‘passwd’.
   users.users.saluki = {
-    
+
     isNormalUser = true;
     description = "Sara Grace";
 
