@@ -5,6 +5,7 @@
     homeManager =
     { ... }:
     {
+      imports = [ <flux/shell> ];
       programs.zsh = {
         enable = true;
 
