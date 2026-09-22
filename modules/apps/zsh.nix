@@ -51,6 +51,8 @@
           theme = "agnoster";
         };
       };
+
+      programs.atuin.enableZshIntegration = true;
     };
   };
 }

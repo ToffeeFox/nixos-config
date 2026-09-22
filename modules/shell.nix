@@ -15,20 +15,24 @@
         sysflake-sync = "sudo rm -r /etc/nixos/* && sudo cp -r ~/nixos-config/* /etc/nixos/";
       };
 
-      programs.atuin = {
-        enable = true;
+      programs = {
+        atuin = {
+          enable = true;
 
-        daemon.enable = true;
+          daemon.enable = true;
 
-        enableZshIntegration = true;
+          settings = {
+            search_mode = "fuzzy";
+          };
 
-        settings = {
-          search_mode = "fuzzy";
+          # In case Atuin decides it is too good for our nix config
+          forceOverwriteSettings = true;
         };
-
-        # In case Atuin decides it is too good for our nix config
-        forceOverwriteSettings = true;
       };
+
+      home.packages = with pkgs; [
+        bubblewrap
+      ];
     };
   };
 }
