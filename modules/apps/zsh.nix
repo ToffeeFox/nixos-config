@@ -1,11 +1,13 @@
+{ __findFile, ... }:
 {
   flux.zsh = {
+    includes = [ <flux/shell> ];
+
     nixos.programs.zsh.enable = true;
 
     homeManager =
     { ... }:
     {
-      imports = [ <flux/shell> ];
       programs.zsh = {
         enable = true;
 
