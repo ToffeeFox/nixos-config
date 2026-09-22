@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   # Set up fingerprint auth
   services.fprintd = {

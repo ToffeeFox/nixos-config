@@ -17,10 +17,10 @@
 
     ];
 
-    nixos =
-      { pkgs, ... }:
-      {
-        imports = [ inputs.nixos-hardware.nixosModules.dell-precision-5570 ];
+    nixos = {
+      imports = [
+          inputs.nixos-hardware.nixosModules.dell-precision-5570
+        ];
 
         boot = {
           plymouth.enable = true;
