@@ -10,6 +10,7 @@
       <flux/apps/patched_logseq>
       <flux/apps/zed-editor>
       <flux/apps/zen>
+      <flux/apps/browser/brave>
     ];
   };
 }

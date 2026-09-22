@@ -1,5 +1,5 @@
 {
-  flux.browser.brave = {
+  flux.apps.browser.brave = {
     homeManager = {
       programs.brave = {
         enable = true;
