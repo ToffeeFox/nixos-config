@@ -13,16 +13,18 @@
           readOnly = true;
         };
 
-        userDirs = {
+        userDirs = let
+          homeDir = config.home.homeDirectory;
+        in {
           enable = true;
           createDirectories = true;
           setSessionVariables = true;
 
           desktop = null;
-          templates = "${config.home.homeDirectory}/Templates";
+          templates = "${homeDir}/Templates";
           music = null;
           publicShare = null;
-          projects = "${config.home.homeDirectory}/Projects";
+          projects = "${homeDir}/Projects";
         };
       };
 
