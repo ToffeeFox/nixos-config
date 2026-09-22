@@ -40,7 +40,7 @@ in
 
           default_model = {
             provider = "ollama";
-            model = "gemma4:26b";
+            model = "${local_ai.curated_models.code_assistant}";
             enable_thinking = "true";
           };
 
@@ -53,8 +53,8 @@ in
           provider = "ollama";
 
           ollama = {
-            api_url = "http://192.168.1.224:11434";
-            model = "qwen2.5-coder:7b-base";
+            api_url = "http://${local_ai.host}:${local_ai.port}";
+            model = "${local_ai.curated_models.code_predictions}";
           };
         };
 
