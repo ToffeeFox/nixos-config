@@ -1,6 +1,11 @@
 {
   flux.xdg = {
-    nixos.xdg.terminal-exec.enable = true;
+    nixos = {
+      xdg = {
+        portal.enable = true;
+        terminal-exec.enable = true;
+      };
+    };
 
     homeManager =
     { config, ... }:
