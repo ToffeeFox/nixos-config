@@ -9,6 +9,7 @@
     #};
   };
 
-  # This is weirdly necessary to prevent excessive delay during initial login via SDDM
+  # This is weirdly necessary to prevent
+  # excessive delay during initial login via SDDM
   security.pam.services.login.fprintAuth = false;
 }
