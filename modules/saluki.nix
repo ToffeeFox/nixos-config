@@ -12,5 +12,14 @@
       <flux/apps/zen>
       <flux/apps/browser/brave>
     ];
+
+    homeManager =
+    { config, ... }:
+    {
+      programs.git.settings = {
+        user.name = "ToffeeFox";
+        user.email = "dev@toffeefox.com";
+      };
+    };
   };
 }
