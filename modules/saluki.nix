@@ -7,6 +7,9 @@
       <flux/xdg>
       <flux/zsh>
 
+      <flux/peripherals/logitech>
+      <flux/trezor>
+
       <flux/apps/git>
       <flux/apps/patched_logseq>
       <flux/apps/zed-editor>
@@ -23,7 +26,17 @@
       };
 
       home.packages = with pkgs; [
+        # Utilities
+        boatswain
+        filezilla
+        popsicle
+
+        # Media
         finamp
+
+        ## Communications
+        telegram-desktop
+        thunderbird
       ];
     };
   };
