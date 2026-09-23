@@ -9,6 +9,7 @@
       <flux/boot/graphical>
       <flux/boot/secure>
       <flux/workstation>
+      <flux/homelab/access>
     ];
   };
 }
