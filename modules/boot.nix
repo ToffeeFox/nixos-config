@@ -1,70 +1,43 @@
-{ pkgs, ... }:
-
-let
-  disks = {
-    rootUUID = "983b1082-724b-4108-8226-f70d098dddcf";
-    swapUUID = "5c9b5633-7943-4643-b7ca-769ce43444cd";
-  };
-in
+{ flux, lib, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    # Secure Boot Manager Package Thing
-    sbctl
-  ];
-  
-  boot = {
-    # Bootloader!
-    loader = {
-      #systemd-boot.enable = true;
-      limine = {
+  flux.boot.provides = {
+    secure.nixos = {
+      boot = {
+        loader = {
+          systemd-boot.enable = lib.mkForce false;
+
+          limine = {
+            enable = true;
+
+            secureBoot.enable = true;
+
+            style = {
+              interface = {
+                branding = "Lukida's Customized Limine Bootloader";
+              };
+            };
+          };
+        };
+      };
+    };
+
+    graphical.nixos.boot = {
+      plymouth = {
         enable = true;
-
-        secureBoot.enable = true;
-
-        resolution = "1920x1200x32";
-
-        style = {
-          interface = {
-            branding = "Lukida's Customized Limine Bootloader";
-            resolution = "1920x1200";
-          };
-        };
+        theme = "bgrt";
       };
-      efi.canTouchEfiVariables = true;
-    };
 
-    # Plymouth Pretty Boot
-    plymouth = {
-      enable = true;
-      theme = "bgrt";
-    };
+      consoleLogLevel = 3;
+      initrd.verbose = false;
 
-    # Kernel package selection (using latest)
-    kernelPackages = pkgs.linuxPackages_latest;
+      initrd.systemd.enable = true;
 
-    initrd = {
-      systemd.enable = true;
-
-      luks = {
-        # Counterintuitively, we need to disable FIDO2 support to use
-        # FIDO2 with systemd stage 1.
-        fido2Support = false;
-
-        devices = {
-          "luks-${disks.rootUUID}" = {
-            crypttabExtraOpts = [
-              "fido2-device=auto"
-            ];
-            device = "/dev/disk/by-uuid/${disks.rootUUID}";
-          };
-          "luks-${disks.swapUUID}" = {
-            crypttabExtraOpts = [
-              "fido2-device=auto"
-            ];
-            device = "/dev/disk/by-uuid/${disks.swapUUID}";
-          };
-        };
-      };
+      kernelParams = [
+        "splash"
+        "boot.shell_on_fail"
+        "udev.log_priority=3"
+        "rd.systemd.show_status=auto"
+      ];
     };
   };
 }

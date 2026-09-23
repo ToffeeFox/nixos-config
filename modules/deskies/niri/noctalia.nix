@@ -1,7 +1,22 @@
 { inputs, ... }:
 {
   flux.niri._.noctalia = {
-    nixos.services.displayManager.noctalia-greeter.enable = true;
+    nixos =
+    { pkgs, ... }: {
+      services.displayManager.noctalia-greeter = {
+        enable = true;
+
+        extraArgs = "";
+
+        settings = {
+          cursor = {
+            theme = "Bibata-Modern";
+            size = 24;
+            path = "${pkgs.bibata-cursors}/share/icons";
+          };
+        };
+      };
+    };
 
     homeManager = { pkgs, lib, ... }: {
       xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;

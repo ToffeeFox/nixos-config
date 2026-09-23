@@ -1,5 +1,5 @@
 {
-  flux.git = {
+  flux.apps.git = {
     nixos.programs.git.enable = true;
 
     homeManager = {

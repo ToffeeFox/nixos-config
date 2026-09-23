@@ -1,8 +1,9 @@
-{ __findFile, ... }:
+{ __findFile, den, ... }:
 {
   den.aspects.saluki = {
     includes = [
-      <den/primary_user>
+      <den/primary-user>
+      <flux/batteries/privileged-user>
       <flux/niri>
       <flux/xdg>
       <flux/zsh>
@@ -44,6 +45,7 @@
     homeManager =
     { pkgs, ... }:
     {
+
       programs.git.settings = {
         user.name = "ToffeeFox";
         user.email = "dev@toffeefox.com";

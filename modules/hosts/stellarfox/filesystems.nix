@@ -6,7 +6,7 @@ let
 in
 {
   den.aspects.stellarfox.nixos = {
-    filesystems."/" = {
+    fileSystems."/" = {
       device = "/dev/mapper/luks-${disks.rootUUID}";
       fsType = "btrfs";
     };
@@ -28,7 +28,7 @@ in
       */
     };
 
-    filesystems."/nix" = {
+    fileSystems."/nix" = {
       device = "/dev/mapper/luks-${disks.rootUUID}";
       fsType = "btrfs";
       options = [
@@ -36,7 +36,7 @@ in
       ];
     };
 
-    filesystems."/home" = {
+    fileSystems."/home" = {
       device = "/dev/mapper/luks-${disks.rootUUID}";
       fsType = "btrfs";
       options = [

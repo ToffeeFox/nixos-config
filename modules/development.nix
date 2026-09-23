@@ -1,11 +1,11 @@
 { __findFile, den, flux, ... }:
 {
-  flux.development = {
-    provides.usb.nixos = {
+  flux.development.provides = {
+    usb.nixos = {
       users.privilegedGroups = [ "plugdev" ];
     };
 
-    provides.android = {
+    android = {
       includes = [
         <flux/development/usb>
       ];
@@ -18,7 +18,7 @@
         };
     };
 
-    provides.nix = {
+    nix = {
       nixos =
         { lib, pkgs, ... }:
         {

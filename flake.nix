@@ -53,21 +53,5 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations.foxpad-ultranix = nixpkgs.lib.nixosSystem {
-
-      modules = [
-
-        # Import previous configuration.nix to prevent breakage during migration
-        ./configuration.nix
-
-        # NixOS Hardware Profile
-        inputs.nixos-hardware.nixosModules.dell-precision-5570
-
-        ## Noctalia and its Greeter
-        inputs.noctalia.nixosModules.default
-        inputs.noctalia-greeter.nixosModules.default
-      ];
-    };
-  };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

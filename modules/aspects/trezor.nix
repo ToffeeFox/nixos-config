@@ -1,5 +1,6 @@
+{ flux, ... }:
 {
-  flux._.trezor = {
+  flux.trezor = {
     nixos =
     { lib, ... }:
     {
@@ -11,7 +12,7 @@
     homeManager =
     { pkgs, lib, ... }:
     {
-      home.packahes = with pkgs; [
+      home.packages = with pkgs; [
         trezor-suite
       ];
     };

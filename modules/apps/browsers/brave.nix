@@ -4,7 +4,7 @@
       programs.brave = {
         enable = true;
 
-        homepageLocation = "https://www.startpage.com/";
+        # homepageLocation = "https://www.startpage.com/";
 
         commandLineArgs = [
           ""
