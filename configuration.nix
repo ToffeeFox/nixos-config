@@ -15,7 +15,6 @@
       ./modules/hosts/precision_5570/tweaks.nix
 
       # Load security config
-      ./modules/security/core.nix
       ./modules/security/u2f.nix
 
       # Load special profiles/bundles
