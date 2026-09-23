@@ -30,7 +30,20 @@
 
         system.stateVersion = "26.05";
 
-        boot.initrd.systemd.enable = true;
+        services.pulseaudio.enable = false;
+        security.rtkit.enable = true;
+        services.pipewire = {
+          enable = true;
+          alsa.enable = true;
+          alsa.support32Bit = true;
+          pulse.enable = true;
+        };
+
+        fonts.packages = with pkgs; [
+          fira
+          fira-code
+          fira-code-symbols
+        ];
       };
   };
 }

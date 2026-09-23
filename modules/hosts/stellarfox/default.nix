@@ -14,7 +14,7 @@
   };
   den.aspects.saluki = {
     includes = with flux; [
-
+      laptop
     ];
 
     nixos = {
