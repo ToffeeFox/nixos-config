@@ -13,9 +13,9 @@
 
       <flux/peripherals/logitech>
       <flux/trezor>
-      <flux/homelab/access>
 
       <flux/apps/git>
+      <flux/apps/keepassxc>
       #<flux/apps/patched_logseq>
       <flux/apps/zed-editor>
       <flux/apps/browser/brave>
