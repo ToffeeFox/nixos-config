@@ -1,14 +1,17 @@
 { flux, lib, ... }:
 {
   flux.boot.provides = {
-    secure.nixos = {
+    secure.nixos = { pkgs, ... }: {
       boot = {
+        kernelPackages = pkgs.linuxPackages_latest;
+        initrd.luks.fido2Support = false;
         loader = {
           systemd-boot.enable = lib.mkForce false;
+          # efi.canTouchEfiVariables = true;
 
           limine = {
             enable = true;
-
+            maxGenerations = 32;
             secureBoot.enable = true;
 
             style = {
@@ -28,7 +31,7 @@
       };
 
       consoleLogLevel = 3;
-      initrd.verbose = false;
+      initrd.verbose = true;
 
       initrd.systemd.enable = true;
 
