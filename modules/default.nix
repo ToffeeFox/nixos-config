@@ -49,6 +49,8 @@
           {
             useUserPackages = true;
             useGlobalPkgs = true;
+
+            backupFileExtension = "backup-${toString inputs.self.lastModifiedDate}";
           };
       };
 
