@@ -1,5 +1,8 @@
+{ lib, ... }:
 {
   flux.apps._.keepassxc = {
+    nixos.services.gnome.gnome-keyring.enable = lib.mkForce false;
+
     homeManager =
     { lib, ... }:
     {
