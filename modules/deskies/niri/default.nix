@@ -174,6 +174,10 @@
 
                 "Mod+G".action.switch-focus-between-floating-and-tiling = [ ];
 
+                "Mod+Minus".action.set-column-width = [ "-10%" ];
+                "Mod+Equal".action.set-column-width = [ "+10%" ];
+
+                /*
                 "Mod+H".action.focus-column-or-monitor-left = [ ];
                 "Mod+J".action.focus-window-or-workspace-down = [ ];
                 "Mod+K".action.focus-window-or-workspace-up = [ ];
@@ -183,6 +187,7 @@
                 "Mod+Shift+J".action.move-window-or-to-workspace-down = [ ];
                 "Mod+Shift+K".action.move-window-or-to-workspace-up = [ ];
                 "Mod+Shift+L".action.move-column-or-to-monitor-right = [ ];
+                */
 
                 "Mod+WheelScrollDown".action.focus-column-right = [ ];
                 "Mod+WheelScrollUp".action.focus-column-left = [ ];
