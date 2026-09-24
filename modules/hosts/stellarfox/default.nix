@@ -1,4 +1,4 @@
-{ flux, inputs, ... }:
+{ __findFile, flux, inputs, ... }:
 {
   den.hosts.x86_64-linux.stellarfox = {
     users.saluki.classes = [ "homeManager" ];
@@ -13,25 +13,34 @@
     };
   };
   den.aspects.saluki = {
-    includes = with flux; [
-      laptop
+    includes = [
+      <flux/laptop>
+      <flux/security/fprint>
+      <flux/security/u2f>
     ];
 
-    nixos = {
+    nixos = { modulesPath, ... }: {
       imports = [
+          #(modulesPath + "/installer/scan/not-detected.nix")
           inputs.nixos-hardware.nixosModules.dell-precision-5570
         ];
 
-        boot = {
-          plymouth.enable = true;
-        };
+        hardware.enableRedistributableFirmware = true;
+
+        #boot = {
+        #  initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "rtsx_pci_sdmmc" ];
+        #  kernelModules = [ "kvm-intel" ];
+        #};
+
+        hardware.bluetooth.enable = true;
 
         networking.hostName = "stellarfox";
         networking.networkmanager.enable = true;
 
         services = {
-          fprintd.enable = true; # Enable fingerprint scanner
           fwupd.enable = true; # Enable firmware updates with `fwupdmgr update`
+          power-profiles-daemon.enable = true;
+          upower.enable = true;
         };
       };
   };
