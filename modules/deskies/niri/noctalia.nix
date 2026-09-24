@@ -6,14 +6,12 @@
       services.displayManager.noctalia-greeter = {
         enable = true;
 
-        extraArgs = "";
+        extraArgs = [
+          ""
+        ];
 
         settings = {
-          cursor = {
-            theme = "Bibata-Modern";
-            size = 24;
-            path = "${pkgs.bibata-cursors}/share/icons";
-          };
+          # idk man
         };
       };
     };

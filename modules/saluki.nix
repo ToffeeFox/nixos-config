@@ -16,7 +16,7 @@
       <flux/homelab/access>
 
       <flux/apps/git>
-      <flux/apps/patched_logseq>
+      #<flux/apps/patched_logseq>
       <flux/apps/zed-editor>
       <flux/apps/browser/brave>
       <flux/apps/browser/zen>
@@ -43,8 +43,15 @@
     };
 
     homeManager =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
+      gtk.gtk4.theme = config.gtk.theme;
+      home.pointerCursor = {
+        enable = true;
+        package = pkgs.posy-cursors;
+        name = "Posy_Cursor";
+        gtk.enable = true;
+      };
 
       programs.git.settings = {
         user.name = "ToffeeFox";

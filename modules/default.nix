@@ -44,6 +44,24 @@
           fira-code
           fira-code-symbols
         ];
+
+        home-manager =
+          {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+          };
+      };
+
+    homeManager =
+      {
+        programs.home-manager.enable = true;
+        home = {
+          sessionPath = [ "$HOME/.local/bin" ];
+          sessionVariables = {
+            NIXPKGS_ALLOW_UNFREE = "1";
+          };
+          stateVersion = "26.05";
+        };
       };
   };
 }

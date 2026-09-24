@@ -11,9 +11,8 @@
     includes = [
       flux.wayland._.base
       flux.niri._.noctalia
-      den.lib.perHost
       (
-        { host, ... }:
+        { user, host, ... }:
         {
           homeManager =
             { pkgs, config, ... }:
@@ -22,9 +21,9 @@
                 _: v: with v; {
                   mode = { inherit width height refresh; };
                   scale = scaling;
-                  position = { inherit x y; };
-                  variable-refresh-rate = lib.mkIf vrr "on-demand";
-                  focus-at-startup = lib.mkIf primary true;
+                  # position = { inherit x y; };
+                  # variable-refresh-rate = lib.mkIf vrr "on-demand";
+                  # focus-at-startup = lib.mkIf primary true;
                 }
               ) host.displays;
             };
@@ -167,7 +166,7 @@
 
                 "Mod+W".action.toggle-overview = [ ];
                 "Mod+O".action.show-hotkey-overlay = [ ];
-                
+
                 "Mod+S".action.screenshot-window = [ ];
                 "Mod+Ctrl+S".action.spawn-sh = "niri msg action screenshot-screen && wl-paste | satty -f -";
 
