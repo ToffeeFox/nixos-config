@@ -41,7 +41,7 @@ in
           default_model = {
             provider = "ollama";
             model = "${local_ai.curated_models.code_assistant}";
-            enable_thinking = "true";
+            enable_thinking = true;
           };
 
           favorite_models = [];
