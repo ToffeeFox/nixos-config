@@ -3,7 +3,11 @@
   flux.zsh = {
     includes = [ <flux/shell> ];
 
-    nixos.programs.zsh.enable = true;
+    nixos = { user, pkgs, ... }: {
+      programs.zsh.enable = true;
+
+      users.users.${user.userName}.shell = pkgs.zsh;
+    };
 
     homeManager =
     { ... }:
