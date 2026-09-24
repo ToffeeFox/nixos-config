@@ -1,3 +1,4 @@
+{ den, flux, ... }:
 let
   disks = {
     rootUUID = "983b1082-724b-4108-8226-f70d098dddcf";
@@ -18,14 +19,13 @@ in
         ];
         device = "/dev/disk/by-uuid/${disks.rootUUID}";
       };
-      /*
+
       "luks-${disks.swapUUID}" = {
         crypttabExtraOpts = [
           "fido2-device=auto"
         ];
         device = "/dev/disk/by-uuid/${disks.swapUUID}";
       };
-      */
     };
 
     fileSystems."/nix" = {
