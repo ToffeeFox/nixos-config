@@ -127,7 +127,7 @@
 
               gaps = 8;
 
-              default-column-width.proportion = 0.66667;
+              default-column-width.proportion = 0.6;
               tab-indicator.place-within-column = true;
             };
 
