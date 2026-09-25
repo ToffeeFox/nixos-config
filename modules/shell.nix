@@ -13,7 +13,8 @@
       { lib, pkgs, ... }:
       {
         environment.systemPackages = with pkgs; [
-          #bubblewrap
+          btop
+          bubblewrap
           tmux
         ];
       };
