@@ -45,7 +45,14 @@
     homeManager =
     { pkgs, config, ... }:
     {
-      gtk.gtk4.theme = config.gtk.theme;
+      gtk = {
+        enable = true;
+        gtk4.theme = config.gtk.theme;
+        iconTheme = {
+          name = "Fluent-Dark";
+          package = pkgs.fluent-icon-theme;
+        };
+      };
       home.pointerCursor = {
         enable = true;
         package = pkgs.posy-cursors;
