@@ -39,8 +39,8 @@ in
           sidebar_side = "right";
 
           default_model = {
-            provider = "ollama";
-            model = "${local_ai.curated_models.code_assistant}";
+            provider = "zed";
+            #model = "${local_ai.curated_models.code_assistant}";
             enable_thinking = true;
           };
 
@@ -50,7 +50,7 @@ in
         };
 
         edit_predictions = {
-          provider = "ollama";
+          provider = "zed";
 
           ollama = {
             api_url = "http://${local_ai.host}:${local_ai.port}";
