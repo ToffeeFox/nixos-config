@@ -18,6 +18,15 @@
         };
     };
 
+    rust = {
+      homeManager = { pkgs, ... }: {
+        home.packages = with pkgs; [
+          rustc
+          cargo
+        ];
+      };
+    };
+
     nix = {
       nixos =
         { lib, pkgs, ... }:
