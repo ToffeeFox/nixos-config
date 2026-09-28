@@ -158,6 +158,8 @@
 
             binds = lib.attrsets.mergeAttrsList [
               {
+                "XF86AudioPlay".action.spawn-sh = "playerctl play-pause";
+
                 "Mod+Q".action.close-window = [ ];
 
                 #"Mod+Shift+Space".action.spawn-sh = "systemctl --user restart vicinae.service";

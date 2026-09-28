@@ -386,6 +386,7 @@
             "XF86AudioMute".action = msg "volume-mute";
             "XF86AudioRaiseVolume".action = msg "volume-up";
             "XF86AudioLowerVolume".action = msg "volume-down";
+
             "XF86MonBrightnessUp".action = msg "brightness-up";
             "XF86MonBrightnessDown".action = msg "brightness-down";
           };
