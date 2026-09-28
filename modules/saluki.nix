@@ -58,6 +58,7 @@
         package = pkgs.phinger-cursors;
         name = "phinger-cursors-dark";
         gtk.enable = true;
+        size = 32;
       };
 
       programs.git.settings = {
