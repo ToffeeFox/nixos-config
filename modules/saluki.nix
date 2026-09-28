@@ -49,14 +49,14 @@
         enable = true;
         gtk4.theme = config.gtk.theme;
         iconTheme = {
-          name = "Fluent-Dark";
+          name = "Fluent";
           package = pkgs.fluent-icon-theme;
         };
       };
       home.pointerCursor = {
         enable = true;
-        package = pkgs.posy-cursors;
-        name = "Posy_Cursor";
+        package = pkgs.phinger-cursors;
+        name = "phinger-cursors-dark";
         gtk.enable = true;
       };
 
