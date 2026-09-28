@@ -380,6 +380,14 @@
             "Mod+Escape".action = msg "session lock";
             "Mod+V".action = msg "panel-toggle clipboard";
             "Mod+Shift+S".action = msg "screenshot-region";
+
+            "Alt+Tab".action = msg "window-switcher";
+
+            "XF86AudioMute".action = msg "volume-mute";
+            "XF86AudioRaiseVolume".action = msg "volume-up";
+            "XF86AudioLowerVolume".action = msg "volume-down";
+            "XF86MonBrightnessUp".action = msg "brightness-up";
+            "XF86MonBrightnessDown".action = msg "brightness-down";
           };
       };
     };
