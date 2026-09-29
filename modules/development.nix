@@ -18,6 +18,15 @@
         };
     };
 
+    python = {
+      homeManager = { pkgs, ... }: {
+        home.packages = with pkgs; [
+          python3
+          # add more later
+        ];
+      };
+    };
+
     rust = {
       homeManager = { pkgs, ... }: {
         home.packages = with pkgs; [
