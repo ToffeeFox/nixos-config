@@ -2,7 +2,7 @@
 {
   flux.deskies.noctalia = {
     includes = [
-      (den.lib.policy.when
+      (den.lib.policy.when # niri is active
         ({ hasAspect, ... }: hasAspect flux.deskies.niri)
         {
           homeManager = { ... }: {
