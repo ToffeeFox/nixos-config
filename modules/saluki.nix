@@ -18,6 +18,7 @@
 
       <flux/apps/git>
       <flux/apps/keepassxc>
+      <flux/apps/patched_logseq>
       <flux/apps/zed-editor>
       <flux/apps/browser/brave>
       <flux/apps/browser/zen>
@@ -74,9 +75,6 @@
         boatswain
         filezilla
         popsicle
-
-        # Productivity
-        logseq
 
         # Media
         finamp
