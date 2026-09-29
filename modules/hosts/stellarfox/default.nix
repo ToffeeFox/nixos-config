@@ -2,6 +2,7 @@
 {
   den.hosts.x86_64-linux.stellarfox = {
     users.saluki.classes = [ "homeManager" ];
+
     displays = {
       eDP-1 = {
         refresh = 60.0;
@@ -19,9 +20,8 @@
       <flux/security/u2f>
     ];
 
-    nixos = { modulesPath, ... }: {
+    nixos = { ... }: {
       imports = [
-          #(modulesPath + "/installer/scan/not-detected.nix")
           inputs.nixos-hardware.nixosModules.dell-precision-5570
         ];
 

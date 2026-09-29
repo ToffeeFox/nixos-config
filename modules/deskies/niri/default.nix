@@ -101,6 +101,9 @@
 
             cursor.theme = config.home.pointerCursor.name;
 
+            # Ask applications to disable CSD (client-side decorations)
+            # for their window borders
+            # Note: Some applications may not respect this setting
             prefer-no-csd = true;
 
             hotkey-overlay = {

@@ -4,6 +4,7 @@
     nixos =
     { lib, ... }:
     {
+      # handles udev rules and the trezor daemon
       services.trezord = {
         enable = true;
       };
@@ -14,6 +15,8 @@
     {
       home.packages = with pkgs; [
         trezor-suite
+        # considering eventually moving to my own flake for this package
+        # because the upstream is not always up to date
       ];
     };
   };

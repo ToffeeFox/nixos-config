@@ -6,6 +6,8 @@
 
       programs.zen-browser.enable = true;
 
+      # TODO: preconfigure extensions
+
       home.sessionVariables.BROWSER = "zen-beta";
     };
   };
