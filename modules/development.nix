@@ -18,11 +18,20 @@
         };
     };
 
+    javascript = {
+      homeManager = { pkgs, ... }: {
+        home.packages = with pkgs; [
+          nodejs
+          yarn
+        ];
+      };
+    };
+
     python = {
       homeManager = { pkgs, ... }: {
         home.packages = with pkgs; [
           python3
-          # add more later
+          uv
         ];
       };
     };
