@@ -1,5 +1,5 @@
 {
-  flux.apps._.logseq = {
+  flux.apps._.patched_logseq = {
     homeManager =
     { pkgs, ... }:
     let
