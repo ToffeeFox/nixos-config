@@ -10,6 +10,12 @@
       url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     };
 
+    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-logseq = {
+      url = "https://github.com/NixOS/nixpkgs/compare/master...ToffeeFox:nixpkgs:logseq.diff";
+      flake = false;
+    };
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
