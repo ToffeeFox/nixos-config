@@ -1,6 +1,34 @@
-{ inputs, ... }:
+{ inputs, den, flux, ... }:
 {
-  flux.niri._.noctalia = {
+  flux.deskies.noctalia = {
+    includes = [
+      (den.lib.policy.when
+        ({ hasAspect, ... }: hasAspect flux.deskies.niri)
+        {
+          homeManager = { ... }: {
+            programs.niri.settings.binds =
+              let
+                msg = cmd: { spawn-sh = "noctalia msg " + cmd; };
+              in
+              {
+                "Mod+Space".action = msg "panel-toggle launcher";
+                "Mod+Escape".action = msg "session lock";
+                "Mod+V".action = msg "panel-toggle clipboard";
+                "Mod+Shift+S".action = msg "screenshot-region";
+
+                "Alt+Tab".action = msg "window-switcher";
+
+                "XF86AudioMute".action = msg "volume-mute";
+                "XF86AudioRaiseVolume".action = msg "volume-up";
+                "XF86AudioLowerVolume".action = msg "volume-down";
+
+                "XF86MonBrightnessUp".action = msg "brightness-up";
+                "XF86MonBrightnessDown".action = msg "brightness-down";
+              };
+          };
+        })
+    ];
+
     nixos =
     { pkgs, ... }: {
       services.displayManager.noctalia-greeter = {
@@ -371,25 +399,6 @@
             weather.unit = "imperial";
           };
         };
-        niri.settings.binds =
-          let
-            msg = cmd: { spawn-sh = "noctalia msg " + cmd; };
-          in
-          {
-            "Mod+Space".action = msg "panel-toggle launcher";
-            "Mod+Escape".action = msg "session lock";
-            "Mod+V".action = msg "panel-toggle clipboard";
-            "Mod+Shift+S".action = msg "screenshot-region";
-
-            "Alt+Tab".action = msg "window-switcher";
-
-            "XF86AudioMute".action = msg "volume-mute";
-            "XF86AudioRaiseVolume".action = msg "volume-up";
-            "XF86AudioLowerVolume".action = msg "volume-down";
-
-            "XF86MonBrightnessUp".action = msg "brightness-up";
-            "XF86MonBrightnessDown".action = msg "brightness-down";
-          };
       };
     };
   };

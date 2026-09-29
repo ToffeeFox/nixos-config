@@ -4,7 +4,9 @@
     includes = [
       <den/primary-user>
       <flux/batteries/privileged-user>
-      <flux/niri>
+
+      <flux/deskies/niri>
+      <flux/deskies/noctalia>
       <flux/xdg>
       <flux/zsh>
       <flux/shell/terminal>

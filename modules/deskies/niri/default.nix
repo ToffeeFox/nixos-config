@@ -7,10 +7,9 @@
   ...
 }:
 {
-  flux.niri = {
+  flux.deskies.niri = {
     includes = [
       flux.wayland._.base
-      flux.niri._.noctalia
       (
         { user, host, ... }:
         {
