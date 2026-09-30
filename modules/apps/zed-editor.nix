@@ -4,7 +4,7 @@ let
     port = "11434";
 
     curated_models = {
-      code_assistant = "gemma4:26b";
+      code_assistant = "qwen3.6:35b-a3b";
       code_predictions = "qwen2.5-coder:7b-base";
     };
   };
@@ -39,8 +39,8 @@ in
           sidebar_side = "right";
 
           default_model = {
-            provider = "zed";
-            #model = "${local_ai.curated_models.code_assistant}";
+            provider = "ollama";
+            model = "${local_ai.curated_models.code_assistant}";
             enable_thinking = true;
           };
 
