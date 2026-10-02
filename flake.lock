@@ -161,18 +161,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-patch-logseq": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-cxIVkvP1XjfKe/bvIzlPK5XNhwymVLWP9VXTcyTLsYI=",
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/master...ToffeeFox:nixpkgs:logseq.diff"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/NixOS/nixpkgs/compare/master...ToffeeFox:nixpkgs:logseq.diff"
-      }
-    },
     "nixpkgs-patcher": {
       "locked": {
         "lastModified": 1789143781,
@@ -254,7 +242,6 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-patch-logseq": "nixpkgs-patch-logseq",
         "nixpkgs-patcher": "nixpkgs-patcher",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
