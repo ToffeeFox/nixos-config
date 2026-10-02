@@ -164,7 +164,7 @@
     "nixpkgs-patch-logseq": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-5cmbi38d7MhxvF18c9DUhjyr/yf6JxpRVGbmNfbjfa8=",
+        "narHash": "sha256-cxIVkvP1XjfKe/bvIzlPK5XNhwymVLWP9VXTcyTLsYI=",
         "type": "file",
         "url": "https://github.com/NixOS/nixpkgs/compare/master...ToffeeFox:nixpkgs:logseq.diff"
       },
