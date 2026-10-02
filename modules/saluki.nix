@@ -5,13 +5,18 @@
       <den/primary-user>
       <flux/batteries/privileged-user>
 
+      <flux/services/syncthing>
+
       <flux/deskies/niri>
       <flux/deskies/noctalia>
       <flux/xdg>
+
       <flux/zsh>
       <flux/shell/terminal>
+
       <flux/development/android>
       <flux/development/nix>
+      <flux/development/javascript>
 
       <flux/peripherals/logitech>
       <flux/trezor>
