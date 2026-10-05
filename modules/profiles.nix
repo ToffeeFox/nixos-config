@@ -4,6 +4,7 @@
     workstation.includes = [
       <flux/boot>
       <flux/virt/podman>
+      <flux/virt/podman/dockerCompat>
     ];
 
     laptop.includes = [

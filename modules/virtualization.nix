@@ -24,20 +24,35 @@
       };
     };
 
-    podman.nixos = {
-      network.firewall.trustedInterfaces = [ "podman0" ];
-      users.privilegedGroups = [ "podman" ];
-      virtualization.podman = {
-        enable = true;
-
-        autoPrune = {
+    podman = {
+      nixos = { pkgs, ... }: {
+        network.firewall.trustedInterfaces = [ "podman0" ];
+        users.privilegedGroups = [ "podman" ];
+        virtualization.podman = {
           enable = true;
-          flags = [ "--all" ];
+          autoPrune = {
+            enable = true;
+            flags = [ "--all" ];
+          };
         };
 
-        dockerCompat = true;
-        dockerSocket = {
-          enable = true;
+        environment.systemPackages = with pkgs; [
+          podman-tui
+        ];
+      };
+
+      provides = {
+        dockerCompat.nixos = { pkgs, ... }: {
+          virtualization.podman = {
+            dockerCompat = true;
+            dockerSocket = {
+              enable = true;
+            };
+          };
+
+          environment.systemPackages = with pkgs; [
+            #podman-compose # Not sure if this is required
+          ];
         };
       };
     };
