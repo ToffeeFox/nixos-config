@@ -7,8 +7,6 @@
 
       <flux/services/syncthing>
 
-      <flux/deskies/niri>
-      <flux/deskies/noctalia>
       <flux/xdg>
 
       <flux/zsh>
