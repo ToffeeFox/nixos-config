@@ -22,7 +22,7 @@
 
     nixos = { ... }: {
       imports = [
-          # AMD mini PC generics from nixos-hardware
+          #TODO: AMD mini PC generics from nixos-hardware
         ];
 
         hardware.enableRedistributableFirmware = true;
