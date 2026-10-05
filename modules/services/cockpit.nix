@@ -13,7 +13,7 @@
         })
     ];
 
-    nixos = { config, lib, pkgs, ... }: {
+    nixos = { pkgs, ... }: {
       services.cockpit = {
         enable = true;
         plugins = with pkgs; [
