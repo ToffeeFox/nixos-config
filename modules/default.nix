@@ -9,6 +9,11 @@
     nixos =
       { pkgs, lib, ... }:
       {
+        imports = [
+          # Yeah sorry I just won't type the British spelling
+          # You can't make me
+          (lib.mkAliasOptionModule [ "virtualization" ] [ "virtualisation" ])
+        ];
         i18n = {
           defaultLocale = "en_US.UTF-8";
           supportedLocales = [ "all" ];
