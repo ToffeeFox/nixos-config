@@ -24,15 +24,6 @@
       };
     };
 
-    # Not really planning on using docker.
-    # Keeping it here for reference while working
-    # on replacing it with podman.
-    docker.nixos = {
-      networking.firewall.trustedInterfaces = [ "docker0" ];
-      users.privilegedGroups = [ "docker" ];
-      virtualization.docker.enable = true;
-    };
-
     podman.nixos = {
       network.firewall.trustedInterfaces = [ "podman0" ];
       users.privilegedGroups = [ "podman" ];
