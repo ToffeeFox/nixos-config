@@ -17,6 +17,8 @@
         trezor-suite
         # considering eventually moving to my own flake for the
         # trezor-suite package because the upstream is not always up to date
+
+        trezor-agent
       ];
     };
   };
