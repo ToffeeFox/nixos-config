@@ -13,7 +13,7 @@
       };
     };
   };
-  den.aspects.saluki = {
+  den.aspects.stellarfox = {
     includes = [
       <flux/laptop>
 

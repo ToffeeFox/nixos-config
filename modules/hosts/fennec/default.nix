@@ -15,8 +15,9 @@
       */
     };
   };
-  den.aspects.saluki = {
+  den.aspects.fennec = {
     includes = [
+      <flux/minipc>
       <flux/security/u2f>
     ];
 
