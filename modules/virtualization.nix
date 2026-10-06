@@ -28,7 +28,7 @@
 
     podman = {
       nixos = { pkgs, ... }: {
-        network.firewall.trustedInterfaces = [ "podman0" ];
+        networking.firewall.trustedInterfaces = [ "podman0" ];
         users.privilegedGroups = [ "podman" ];
         virtualization.podman = {
           enable = true;
