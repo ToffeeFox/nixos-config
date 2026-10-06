@@ -149,6 +149,9 @@ in
           "security.webauth.webauthn_enable_usbtoken" = true;
         };
         /* ---- EXTENSIONS ---- */
+        # These should probably be factored out into separate modules
+        # to allow them to be applied to both firefox- and chromium-based browsers
+        # assuming the syntax does not differ too much
         ExtensionSettings = with builtins;
           let
             extension = shortId: uuid: {
@@ -172,7 +175,7 @@ in
               uiTheme = "dark";
               uiAccentCustom = true;
               uiAccentCustom0 = "#8300ff";
-              cloudStorageEnabled = mkForce false; # Possibly security liability
+              cloudStorageEnabled = mkForce false; # Possible security liability
 
               externalLists = lib.concatStringsSep "\n" importedLists;
             };
