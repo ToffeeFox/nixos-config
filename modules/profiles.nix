@@ -20,6 +20,8 @@
     ];
 
     minipc.includes = [
+      <flux/boot/secure>
+      <flux/boot/graphical>
       <flux/workstation>
       <flux/headless>
     ];
