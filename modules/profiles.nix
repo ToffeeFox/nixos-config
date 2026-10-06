@@ -7,6 +7,11 @@
       <flux/virt/podman/dockerCompat>
     ];
 
+    headless.includes = [
+      <flux/cockpit>
+      <flux/ssh/server>
+    ];
+
     laptop.includes = [
       <flux/boot/graphical>
       <flux/boot/secure>
@@ -16,6 +21,7 @@
 
     minipc.includes = [
       <flux/workstation>
+      <flux/headless>
     ];
   };
 }
