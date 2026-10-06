@@ -15,8 +15,8 @@
     {
       home.packages = with pkgs; [
         trezor-suite
-        # considering eventually moving to my own flake for this package
-        # because the upstream is not always up to date
+        # considering eventually moving to my own flake for the
+        # trezor-suite package because the upstream is not always up to date
       ];
     };
   };
