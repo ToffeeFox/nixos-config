@@ -1,4 +1,4 @@
-{ __findFile, flux, inputs, ... }:
+{ __findFile, inputs, ... }:
 {
   den.hosts.x86_64-linux.stellarfox = {
     users.saluki.classes = [ "homeManager" ];
