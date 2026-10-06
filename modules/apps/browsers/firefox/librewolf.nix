@@ -1,4 +1,4 @@
-{ __findFile, den, flux, }:
+{ __findFile, den, flux, ... }:
 {
   flux.apps.browser.librewolf = {
     # librewolf-specific config here
