@@ -1,0 +1,27 @@
+diff --git a/pkgs/by-name/lo/logseq/bump-better-sqlite3.patch b/pkgs/by-name/lo/logseq/bump-better-sqlite3.patch
+--- a/pkgs/by-name/lo/logseq/bump-better-sqlite3.patch
++++ b/pkgs/by-name/lo/logseq/bump-better-sqlite3.patch
+@@ -10 +10 @@
+-+    "better-sqlite3": "12.8.0",
+++    "better-sqlite3": "12.11.1",
+@@ -50,4 +50,4 @@
+-+better-sqlite3@12.8.0:
+-+  version "12.8.0"
+-+  resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-12.8.0.tgz#ec9ccd4a426a35f3b9355c147af6c92a6ddd6862"
+-+  integrity sha512-RxD2Vd96sQDjQr20kdP+F+dK/1OUNiVOl200vKBZY8u0vTwysfolF6Hq+3ZK2+h8My9YvZhHsF+RSGZW2VYrPQ==
+++better-sqlite3@12.11.1:
+++  version "12.11.1"
+++  resolved "https://registry.yarnpkg.com/better-sqlite3/-/better-sqlite3-12.11.1.tgz#067846efabf7671957fc8a9e8df3be39c6cc0b84"
+++  integrity sha512-dq9AtApgg5PGFtBzPFSBl3HZQjHok5gaQCM6zh2Yk0aSmDCs1CbnVI8/HgASQkNKsWFpseIO9beg5xxpYhbIfA==
+diff --git a/pkgs/by-name/lo/logseq/package.nix b/pkgs/by-name/lo/logseq/package.nix
+--- a/pkgs/by-name/lo/logseq/package.nix
++++ b/pkgs/by-name/lo/logseq/package.nix
+@@ -24 +24 @@
+-  electron_39,
++  electron_43,
+@@ -29 +29 @@
+-  electron = electron_39;
++  electron = electron_43;
+@@ -121 +121 @@
+-    hash = "sha256-TFisR5GwcKmuddGhe0i6rAmr2wDWzed/mXnxVGARYK0=";
++    hash = "sha256-jF3mGuLYL2NZ96w+tPRgB77pfdnviKF/s63TuiHOyfQ=";
