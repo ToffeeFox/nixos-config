@@ -3,15 +3,17 @@
   flux.virt.provides = {
     qemu = {
       nixos = { pkgs, ... }: {
-        boot.kernelParams = [ "amd_iommu=on" ];
-        users.privilegedGroups = [ "kvm" ];
+        #boot.kernelParams = [ "${flux.cpuVendor}_iommu=on" ];
+        users.privilegedGroups = [ "kvm" "libvirtd" ];
         networking.firewall.trustedInterfaces = [ "virbr0" ];
+
         programs.virt-manager.enable = true;
+
         environment.systemPackages = with pkgs; [
           virglrenderer
         ];
-        services.qemuGuest.enable = true;
-        virtualisation = {
+
+        virtualization = {
           libvirtd.enable = true;
           spiceUSBRedirection.enable = true;
         };
