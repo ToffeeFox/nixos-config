@@ -13,12 +13,17 @@
       };
     };
   };
+
+  den.aspects.saluki = {
+    includes = [
+      <flux/deskies/niri>
+      <flux/deskies/noctalia>
+    ];
+  };
+
   den.aspects.stellarfox = {
     includes = [
       <flux/laptop>
-
-      <flux/deskies/niri>
-      <flux/deskies/noctalia>
 
       <flux/security/fprint>
       <flux/security/u2f>
