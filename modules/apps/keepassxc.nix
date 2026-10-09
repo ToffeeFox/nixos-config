@@ -12,7 +12,7 @@
 
         settings = {
           # Prevent error messages related to browser integration installation failure
-          # programs.keepass.xc.enable handles browser integration installs automatically
+          # programs.keepassxc.enable handles browser integration installs automatically
           Browser.UpdateBinaryPath = false;
 
           GUI = {
@@ -50,6 +50,13 @@
             ConfirmDeleteItem = lib.mkForce true;
 
             UnlockBeforeSearch = lib.mkForce true;
+          };
+
+          SSHAgent = {
+            Enabled = true;
+
+            UseOpenSSH = true;
+            UsePageant = false;
           };
         };
       };
