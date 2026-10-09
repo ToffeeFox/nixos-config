@@ -10,6 +10,7 @@
       environment.xfce.excludePackages = with pkgs.xfce; [
         mousepad # Text Editor
         parole # Media Player
+        ristretto # Image Viewer
       ];
 
       services = {
