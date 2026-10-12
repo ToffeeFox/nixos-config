@@ -35,7 +35,8 @@ in
       users.users =
         let
           keys = [
-            # "pubkeys here after figuring out trezor nonsense"
+            "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILRX/GCHT+QS71rYUMQz6IYb+asMpWZ/1PDfIcTirRXJAAAABHNzaDo= saluki@foxlab"
+            # Add spare/backup/emergency key (first figure out how we're implementing this)
           ];
         in
         {
