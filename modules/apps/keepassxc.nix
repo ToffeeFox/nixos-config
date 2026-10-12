@@ -4,11 +4,13 @@
     nixos.services.gnome.gnome-keyring.enable = lib.mkForce false;
 
     homeManager =
-    { lib, ... }:
+    { lib, config, ... }:
     {
       programs.keepassxc = {
         enable = true;
-        autostart = true;
+        # Started by the systemd user service below instead, so it can be
+        # ordered after the SSH agent.
+        autostart = false;
 
         settings = {
           # Prevent error messages related to browser integration installation failure
@@ -61,7 +63,26 @@
         };
       };
 
-      xdg.autostart.enable = true;
+      systemd.user.services.keepassxc =
+        let
+          # Whatever unit provides $SSH_AUTH_SOCK (ssh-agent.service here).
+          # set-SSH_AUTH_SOCK is ordered before it, so KeePassXC inherits the var.
+          agentUnits = lib.optional config.sshAuthSock.enable config.sshAuthSock.systemd.socketProviderUnit;
+        in
+        {
+          Unit = {
+            Description = "KeePassXC password manager";
+            PartOf = [ "graphical-session.target" ];
+            After = [ "graphical-session.target" ] ++ agentUnits;
+            Wants = agentUnits;
+          };
+          Service = {
+            ExecStart = lib.getExe' config.programs.keepassxc.package "keepassxc";
+            Restart = "on-failure";
+            Slice = "app.slice";
+          };
+          Install.WantedBy = [ "graphical-session.target" ];
+        };
     };
   };
 }

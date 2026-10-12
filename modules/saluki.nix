@@ -11,6 +11,7 @@
 
       <flux/zsh>
       <flux/shell/terminal>
+      <flux/ssh/client>
 
       <flux/development/android>
       <flux/development/nix>
