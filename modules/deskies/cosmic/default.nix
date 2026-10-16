@@ -5,7 +5,7 @@
       flux.wayland._.base
     ];
 
-    nixos = { ... }: {
+    nixos = { pkgs, ... }: {
       services = {
         desktopManager.cosmic = {
           enable = true;
@@ -18,6 +18,14 @@
           defaultSession = "cosmic";
         };
       };
+
+      environment.cosmic.excludePackages = with pkgs; [
+        cosmic-edit # I prefer KATE
+        # cosmic-viewer
+        cosmic-player # I rather like VLC
+        cosmic-term # I prefer Alacritty, plus CosmicTerm doesn't support nerdfonts
+        # Or, it is possible I am not setting it up correctly
+      ];
     };
   };
 }
