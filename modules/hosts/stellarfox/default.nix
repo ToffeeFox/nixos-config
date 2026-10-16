@@ -1,4 +1,4 @@
-{ __findFile, inputs, ... }:
+{ __findFile, den, inputs, ... }:
 {
   den.hosts.x86_64-linux.stellarfox = {
     users.saluki.classes = [ "homeManager" ];
@@ -14,15 +14,20 @@
     };
   };
 
-  den.aspects.saluki = {
-    includes = [
-      <flux/deskies/niri>
-      <flux/deskies/noctalia>
-    ];
-  };
-
   den.aspects.stellarfox = {
+    # Host-scoped: only users on stellarfox get this desktop.
+    policies.to-users = { host, user, ... }: [
+      (den.lib.policy.include {
+        includes = [
+          <flux/deskies/niri>
+          <flux/deskies/noctalia>
+        ];
+      })
+    ];
+
     includes = [
+      den.aspects.stellarfox.policies.to-users
+
       <flux/laptop>
 
       <flux/security/fprint>

@@ -5,9 +5,9 @@
       <flux/xserver/base>
     ];
 
-    nixos = { pkgs, lib, ... }: {
+    nixos = { pkgs, ... }: {
       # Remove the following default packages from the XFCE desktop
-      environment.xfce.excludePackages = with pkgs.xfce; [
+      environment.xfce.excludePackages = with pkgs; [
         mousepad # Text Editor
         parole # Media Player
         ristretto # Image Viewer

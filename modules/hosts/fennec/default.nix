@@ -18,6 +18,7 @@
   den.aspects.fennec = {
     includes = [
       <flux/minipc>
+      <flux/deskies/xfce>
       <flux/security/u2f>
     ];
 
