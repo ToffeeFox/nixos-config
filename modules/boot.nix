@@ -7,7 +7,7 @@
         initrd.luks.fido2Support = false;
         loader = {
           systemd-boot.enable = lib.mkForce false;
-          # efi.canTouchEfiVariables = true;
+          efi.canTouchEfiVariables = true;
 
           limine = {
             enable = true;
