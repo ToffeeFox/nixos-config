@@ -46,6 +46,21 @@
 
     homeManager = { pkgs, lib, ... }: {
       xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
+
+      # Only consider Noctalia started once its tray (StatusNotifierWatcher) is on the
+      # bus, so units ordered after it (via tray.target below) don't race it at login.
+      # Note: requires the "tray" bar widget; without it the name is never acquired
+      # and startup times out.
+      systemd.user.services.noctalia.Service = {
+        Type = "dbus";
+        BusName = "org.kde.StatusNotifierWatcher";
+      };
+      # tray.target itself is defined by Home Manager; this just extends it.
+      systemd.user.targets.tray.Unit = {
+        Wants = [ "noctalia.service" ];
+        After = [ "noctalia.service" ];
+      };
+
       programs = {
 
         noctalia = {

@@ -73,8 +73,9 @@
           Unit = {
             Description = "KeePassXC password manager";
             PartOf = [ "graphical-session.target" ];
-            After = [ "graphical-session.target" ] ++ agentUnits;
-            Wants = agentUnits;
+            # tray.target: wait for the system tray, or the tray icon is never created.
+            After = [ "graphical-session.target" "tray.target" ] ++ agentUnits;
+            Wants = [ "tray.target" ] ++ agentUnits;
           };
           Service = {
             ExecStart = lib.getExe' config.programs.keepassxc.package "keepassxc";
