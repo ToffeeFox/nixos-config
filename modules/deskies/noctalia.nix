@@ -300,9 +300,11 @@
 
               battery = {
                 enabled = true;
-                capsule = true;
+                capsule = false;
+                /*
                 capsule_border = "on_surface_variant";
                 capsule_fill = "surface";
+                */
                 display_mode = "graphic";
                 scale = 0.9;
               };
