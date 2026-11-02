@@ -4,7 +4,7 @@
     secure.nixos = { pkgs, ... }: {
       boot = {
         kernelPackages = pkgs.linuxPackages_latest;
-        initrd.luks.fido2Support = false;
+
         loader = {
           systemd-boot.enable = lib.mkForce false;
           efi.canTouchEfiVariables = true;
@@ -31,9 +31,6 @@
       };
 
       consoleLogLevel = 3;
-      initrd.verbose = true;
-
-      initrd.systemd.enable = true;
 
       kernelParams = [
         "splash"
