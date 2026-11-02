@@ -1,7 +1,16 @@
 { lib, ... }:
 {
   flux.apps._.keepassxc = {
-    nixos.services.gnome.gnome-keyring.enable = lib.mkForce false;
+    nixos =
+    { pkgs, ... }:
+    {
+      services.gnome.gnome-keyring.enable = lib.mkForce false;
+
+      # Quick Unlock talks to polkitd to work, but the Home Manager install
+      # does not put the policy file in a place that polkitd can normally find it.
+      # So to fix this, we need to also install keepassxc system-wide.
+      environment.systemPackages = [ pkgs.keepassxc ];
+    };
 
     homeManager =
     { lib, config, ... }:
