@@ -14,7 +14,7 @@
         #TODO: preconfigure extensions
 
         commandLineArgs = [
-          ""
+          "--no-default-browser-check"
         ];
       };
     };
