@@ -18,6 +18,12 @@
           readOnly = true;
         };
 
+        mime = {
+          enable = true;
+        };
+
+        mimeApps.enable = true;
+
         userDirs = let
           homeDir = config.home.homeDirectory;
         in {
