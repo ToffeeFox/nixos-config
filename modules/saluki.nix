@@ -26,6 +26,7 @@
       <flux/apps/zed-editor>
       <flux/apps/browser/brave>
       <flux/apps/browser/zen>
+      <flux/apps/browser/zen/set-default>
     ];
 
     nixos =
