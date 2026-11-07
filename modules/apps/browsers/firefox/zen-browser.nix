@@ -1,7 +1,7 @@
 { inputs, den, flux, ... }:
 {
   flux.apps.browser.zen = {
-    provides.set-default = {
+    set-default = {
       includes = [
         # Only claim default-browser MIME handlers when xdg (and thus mimeapps.list) is managed
         (den.lib.policy.when
