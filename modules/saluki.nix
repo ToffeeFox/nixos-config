@@ -16,6 +16,7 @@
       <flux/development/android>
       <flux/development/nix>
       <flux/development/javascript>
+      <flux/development/python>
 
       <flux/peripherals/logitech>
       <flux/trezor>
@@ -34,6 +35,7 @@
     {
       environment.systemPackages = with pkgs; [
         # System utilities
+        glib
         inetutils
         pciutils
         kdePackages.filelight
@@ -80,6 +82,7 @@
         boatswain
         filezilla
         popsicle
+        units
 
         # Media
         finamp
