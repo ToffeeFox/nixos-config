@@ -93,6 +93,7 @@
 
             plugins = {
               enabled = [
+                "icefish/phone-connect"
                 "levi/warp"
                 "avivbintangaringga/nix-monitor"
               ];
@@ -200,6 +201,7 @@
                 "tray"
                 "group:media_bubble" # Media + Audio Visualizer
                 "warp"
+                "phone-connect"
                 "group:netbt_status" # Network + Bluetooth Status
                 "volume"
                 "brightness"
